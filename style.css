@@ -161,6 +161,7 @@ h4{
     padding: 0;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .trend li{
     color: #777777;
@@ -559,4 +560,119 @@ h4{
     color: rgb(132, 132, 132);
     font-weight: 300;
     font-size: 11px;
+}
+@media (max-width:480px) {
+    .header{
+        display:none;
+    }
+    .boxes{
+        flex-direction: column;
+    }
+    .box{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .box img{
+        filter: brightness(0.5);
+    }
+    h4{
+        font-size: 18px;
+        padding: 15px 30px 15px 30px;
+    }
+    .trend ul{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .trend li{
+        font-size: 10px;
+        font-weight: 700;
+        padding: 8px 8px 8px;
+    }
+    .prod-div{
+        flex-direction: column;
+    }
+    .prod-boxes{
+        width: 100%;
+    }
+    .viewBtn{
+        padding: 13px 13px 13px 13px;
+        font-size: 14px;
+    }
+    .fixed-img{
+        height: 350px;
+    }
+    .fixed-img h1{
+        font-size: 40px;
+    }
+    .fixed-img img{
+        width: 75px;
+    }
+    .feed-div{
+        height: auto;
+    }
+    .feedback{
+        height: auto;
+        width: auto;
+        padding: 30px;
+    }
+    .feedback img{
+        width: 80px;
+        height: 80px;
+    }
+    .feedback p{
+        font-size: 15px;
+    }
+    .feedback span{
+        font-size: 13px;
+    }
+    .offer-box{
+        flex-direction: column;
+    }
+    .special-boxes{
+        width: 100%;
+    }
+    .logo{
+        padding: 30px 0px;
+        width: 100%;
+    }
+    p{
+        font-size: 13px;
+    }
+    .email input{
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+        height: 37px;
+    }
+    .email button{
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+    }
+    .footer{
+        flex-direction: column;
+        padding: 50px 0px;
+    }
+    .footer-logo{
+        width: 100%;
+        padding: 25px 0px;
+    }
+    .footer-logo img{
+        margin-left: 25px;
+    }
+    .details{
+        flex-direction: column;
+        margin-left: 25px;
+        width: 100%;
+        align-items: baseline;
+        font-size: 12px;
+    }
+    .details ul{
+        margin-bottom: 30px;
+    }
+    .icons{
+        display: none;
+    }
 }
