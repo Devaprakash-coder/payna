@@ -36,8 +36,54 @@
             <i class="material-icons">shopping_cart</i>
         </div>
     </nav>
-    <div class="body-1">
-        <section class="body-2">
+
+    <nav class="small-nav" id="small-nav" >
+        <div class="small-logo">
+            <img src="images/logo-white.png" alt="">
+        </div>
+        <div class="small-icons">
+            <i class="material-icons">shopping_cart</i>
+            <i onclick="showList()" class="material-icons">sort</i>
+        </div>
+    </nav>
+
+    <div id="menu-close">
+        <i onclick="hideList()" class="material-icons">close</i>
+    </div>
+
+    <div id="mobile-menu">
+        <div class="search">
+            <input type="text" placeholder="Search entire store">
+            <i class="material-icons">search</i>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>Home</li>
+                <li>Shop</li>
+                <li>Pages</li>
+                <li>Blog</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="lang">
+            <ul>
+                <li>Language</li>
+                <li>Currency</li>
+                <li>My Account</li>
+            </ul>
+        </div>
+        <div class="menu-icons">
+            <ul>
+                <li class="fa fa-facebook-f"></li>
+                <li class="fa fa-twitter"></li>
+                <li class="fa fa-pinterest-p"></li>
+                <li class="fa fa-instagram"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="body-1" id="body-overlay">
+        <section class="body-2" id="body-index">
             <div class="slide">
                 <section class="img-box">
                     <img class="img" src="images/img-slide-1.jpg" alt="">
@@ -574,6 +620,21 @@
         img[indexValue - 1].style.display = "block";
     }
     slideShow();
+
+    function showList(){
+        document.getElementById("menu-close").classList.add("show")
+        document.getElementById("mobile-menu").classList.add("show")
+        document.getElementById("body-overlay").classList.add("bg")
+        document.getElementById("small-nav").classList.add("bg")
+        document.getElementById("body-index").classList.add("index")
+    }
+    function hideList(){
+        document.getElementById("menu-close").classList.remove("show")
+        document.getElementById("mobile-menu").classList.remove("show")
+        document.getElementById("body-overlay").classList.remove("bg")
+        document.getElementById("small-nav").classList.remove("bg")
+        document.getElementById("body-index").classList.remove("index")
+    }
 </script>
 
 </html>
