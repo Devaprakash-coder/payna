@@ -1107,3 +1107,23 @@ h4{
         width: 20%;
     }
 }
+@media (max-width:320px){
+    #menu-close{
+        left: 47px !important;
+    }
+}
+@media (max-width:375px){
+    #menu-close{
+        left: 69px;
+    }
+}
+@media (min-width:767px){
+    #menu-close{
+        left: 224px;
+    }
+}
+@media (min-width:540px){
+    #menu-close{
+        left: 135px;
+    }
+}
