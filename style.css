@@ -3,9 +3,12 @@ body{
     margin: 0;
     padding: 0;
 }
+
 .small-nav,#menu-close,#mobile-menu{
     display: none;
 }
+/* nav bar */
+
 .header{
     display: flex;
     color: white;
@@ -33,17 +36,169 @@ body{
 }
 .text-div{
     width: 50%;
+    height: 63%    
 }
 .text-div ul{
     display: flex;
     padding: 0px;
     list-style: none;
     justify-content: space-around;
-    align-items: center;
+    align-items: end;
     margin: 0;
     color: white;
     font-weight: 600;
     font-family: Montserrat, sans-serif;
+    height: 100%;
+    
+}
+.text-div ul li{
+    cursor: pointer;
+    height: 100%;
+    font-size: 13px;
+    text-decoration: none;
+}
+.text-div ul li:hover{
+    text-decoration: underline 2px;
+    
+}
+.text-div ul li:nth-child(1):hover .hover-home{
+    visibility: visible;
+    transform: translateY(0px);
+    transition: transform .5s, opacity .3s;
+    opacity: 1;
+}
+.text-div ul li:nth-child(2):hover .hover-shop{
+    visibility: visible;
+    transform: translateY(0px);
+    transition: transform .5s, opacity .3s;
+    opacity: 1;
+}
+.text-div ul li:nth-child(4):hover .hover-page{
+    visibility: visible;
+    transform: translateY(0px);
+    transition: transform .5s, opacity .3s;
+    opacity: 1;
+}
+.text-div ul li:nth-child(5):hover .hover-blog{
+    visibility: visible;
+    transform: translateY(0px);
+    transition: transform .5s, opacity .3s;
+    opacity: 1;
+}
+/* Hover list for home */
+
+.hover-home{
+    position: absolute;
+    top: 125px;
+    left: 40px;
+    background: white;
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+    align-items: center;
+    width: 46%;
+    height: 60%;
+    box-shadow: 0px 2px 7px 0px #98929245;
+    visibility: hidden;
+    transform: translateY(90px);
+    opacity: 0;
+}
+.hover-home ul,.hover-shop ul,.hover-page ul,.hover-blog ul{
+    flex-direction: column;
+    color: black;
+    align-items: baseline;
+    justify-content: unset;
+}
+.hover-shop ul li{
+    padding: 10px 0px;
+    font-size: 13px;
+    height: 5%;
+}
+.hover-home ul li:hover,.hover-shop ul li:hover,.hover-page ul li:hover,.hover-blog ul li:hover{
+    color: #e77878;
+    text-decoration: underline;
+    transition: all .5s;
+}
+h5{
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+hr{
+    margin: 0;
+    margin-bottom: 8px;
+    width: 35px;
+    background: #e07a7a;
+    border: none;
+    height: 2px;
+}
+.hover-shop{
+    background-color: white;
+    position: absolute;
+    left: 61px;
+    top: 115px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    box-shadow: -2px 6px 7px 0px #3e3b3b40;
+    visibility: hidden;
+    transform: translateY(90px);
+    opacity: 0;
+}
+.list-div{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+.hover-shop .img-div{
+    width: 30%;
+}
+.hover-page,.hover-blog{
+    background-color: white;
+    position: absolute;
+    top: 115px;
+    padding: 20px;
+    height: 45%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    box-shadow: -2px 2px 3px 0px #656060a6;
+    visibility: hidden;
+    transform: translateY(50px);
+    opacity: 0;
+}
+.hover-blog i{
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+}
+.hover-blog ul:last-child :hover .hover-post{
+    visibility: visible;
+    transform: translatex(0px);
+    transition: transform .5s, opacity .3s;
+    opacity: 1;   
+}
+.hover-post{
+    position: absolute;
+    right: -150px;
+    top: 180px;
+    background: white;
+    padding: 30px;
+    height: 30%;
+    padding-bottom: 0px;
+    box-shadow: -1px 1px 5px 0px #3a383866;
+    visibility: hidden;
+    transform: translatex(-50px);
+    opacity: 0;
+}
+
+/* hover completed */
+
+.img-div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .icon-div{
     display: flex;
@@ -58,6 +213,9 @@ body{
 .icon-div i{
     font-size: 30px;
 }
+
+/* nav bar end */
+
 .body-1{
     width: 100%;
     display: flex;
