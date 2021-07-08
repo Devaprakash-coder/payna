@@ -255,6 +255,8 @@ hr{
     height: 300px;
     width: 30%;
     position: relative;
+    overflow: hidden;
+
 }
 .box div:last-of-type{
     height: 100%
@@ -299,8 +301,8 @@ hr{
 }
 .box img:hover{
     filter: brightness(0.5);
-    object-position: bottom;
-    transition: all 3s ease;
+    transform: scale(1.1);
+    transition: all .5s ease;
 }
 .trend{
     text-align: center;
@@ -871,6 +873,8 @@ h4{
     .menu-icons li:nth-child(4){
         color: rgb(234, 76, 137);
     }
+/* smal nav  */
+
     .slide .img-box{
         height: 480px;
         margin: 0;

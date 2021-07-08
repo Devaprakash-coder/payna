@@ -190,13 +190,17 @@
         </div>
     </div>
 
-    <div class="body-overlay">
-
+    <div class="body-overlay" id="top">
+        <!-- <a href="#top" id="up">
+            <i class="material-icons">
+                arrow_upward
+            </i>
+        </a> -->
         <div class="arrow-div">
             <div>
                 <p>Home > Shop Page > Fashions > High Collar Jacket</p>
             </div>
-            <div>
+            <div class="arrows">
                 <i class="fa fa-arrow-left"></i>
                 <i class="fa fa-arrow-right"></i>
             </div>
@@ -205,16 +209,16 @@
         <div class="prod-div">
             <div class="prod-img">
                 <section class="sample">
-                    <img src="images/small-1.jpg" alt="">
-                    <img src="images/small-2.jpg" alt="">
-                    <img src="images/small-3.jpg" alt="">
-                    <img src="images/small-4.jpg" alt="">
+                    <img onclick="image(0)" src="images/small-1.jpg" alt="">
+                    <img onclick="image(1)" src="images/small-2.jpg" alt="">
+                    <img onclick="image(2)" src="images/small-3.jpg" alt="">
+                    <img onclick="image(3)" src="images/small-4.jpg" alt="">
                 </section>
-                <section class="main">
+                <section class="main" id="image-slide">
                     <img src="images/b-large-1.jpg" alt="">
-                    <!-- <img src="images/b-large-2.jpg" alt="">
-                <img src="images/b-large-3.jpg" alt="">
-                <img src="images/large-4.jpg" alt=""> -->
+                    <img src="images/b-large-2.jpg" alt="">
+                    <img src="images/b-large-3.jpg" alt="">
+                    <img src="images/large-4.jpg" alt="">
                 </section>
             </div>
             <div class="prod-des">
@@ -304,6 +308,18 @@
     <div class="prod-slide">
         <h1>Related Products</h1>
         <div class="prod-flex-div">
+            <i onclick="left()" class="material-icons left">
+                keyboard_arrow_left
+            </i>
+            <i onclick="right()" class="material-icons right">
+                keyboard_arrow_right
+            </i>
+            <i onclick="leftSmall()" class="material-icons left-small">
+                keyboard_arrow_left
+            </i>
+            <i onclick="rightSmall()" class="material-icons right-small">
+                keyboard_arrow_right
+            </i>
             <div class="prod-boxes">
                 <div class="prod-box">
                     <div class="image">
@@ -408,6 +424,40 @@
             <div class="prod-boxes">
                 <div class="prod-box">
                     <div class="image">
+                        <img class="original-img" src="images/black-1.jpg" alt="">
+                        <img class="hover-img" src="images/black-2.jpg" alt="">
+                    </div>
+                    <div class="prod-action">
+                        <section>
+                            <i class="material-icons">zoom_in</i>
+                            <span>Quick Shop</span>
+                        </section>
+                        <section>
+                            <i class="material-icons">favorite_border</i>
+                            <span>Add to Wishlist</span>
+                        </section>
+                        <section>
+                            <i class="material-icons">bar_chart</i>
+                            <span>Add to Compare</span>
+                        </section>
+                    </div>
+                    <div class="prod-action-2">
+                        <h3>Add to cart</h3>
+                    </div>
+                </div>
+
+                <div class="prod-text">
+                    <h3>Blue coat</h3>
+                    <div class="prod-price">
+                        <span>$60.00</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="prod-boxes">
+                <div class="prod-box">
+                    <div class="image">
                         <img class="original-img" src="images/white-1.jpg" alt="">
                         <img class="hover-img" src="images/white-2.jpg" alt="">
                     </div>
@@ -442,25 +492,25 @@
 
     <div class="footer">
         <!-- <div class="footer-logo"> -->
-            <div class="details">
-                <div class="footer-logo">
-            <img src="images/logo-white.png" alt="">
-            <ul>
-                <li>info@example.com</li>
-                <li>+54.854.854.6666</li>
-                <li>035 Virginia Plaza Suite 331</li>
-                <li class="icons">
-                    <ul>
-                        <li><i class="fa fa-facebook"></i></li>
-                        <li><i class="fa fa-twitter"></i></li>
-                        <li><i class="fa fa-youtube"></i></li>
-                        <li><i class="fa fa-dribbble"></i></li>
-                        
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
+        <div class="details">
+            <div class="footer-logo">
+                <img src="images/logo-white.png" alt="">
+                <ul>
+                    <li>info@example.com</li>
+                    <li>+54.854.854.6666</li>
+                    <li>035 Virginia Plaza Suite 331</li>
+                    <li class="icons">
+                        <ul>
+                            <li><i class="fa fa-facebook"></i></li>
+                            <li><i class="fa fa-twitter"></i></li>
+                            <li><i class="fa fa-youtube"></i></li>
+                            <li><i class="fa fa-dribbble"></i></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
             <ul>
                 <h4>COMPANY</h4>
                 <li>Help</li>
@@ -498,19 +548,89 @@
 </body>
 <script>
     function add() {
-        let added = document.getElementById("qtybutton").value;
-        added++;
-        document.getElementById("qtybutton").value = added;
+        let increment = document.getElementById("qtybutton").value;
+        increment++;
+        document.getElementById("qtybutton").value = increment;
     }
     function sub() {
-        let subbed = document.getElementById("qtybutton").value;
-        subbed--;
-        if (subbed < 1) {
-            subbed = 1;
+        let decrement = document.getElementById("qtybutton").value;
+        decrement--;
+        if (decrement < 1) {
+            decrement = 1;
         }
-        document.getElementById("qtybutton").value = subbed;
+        document.getElementById("qtybutton").value = decrement;
     }
 
+    function showList() {
+        document.getElementById("menu-close").classList.add("show")
+        document.getElementById("mobile-menu").classList.add("show")
+        document.getElementById("body-overlay").classList.add("bg")
+        document.getElementById("small-nav").classList.add("bg")
+        document.getElementById("body-index").classList.add("index")
+    }
+    function hideList() {
+        document.getElementById("menu-close").classList.remove("show")
+        document.getElementById("mobile-menu").classList.remove("show")
+        document.getElementById("body-overlay").classList.remove("bg")
+        document.getElementById("small-nav").classList.remove("bg")
+        document.getElementById("body-index").classList.remove("index")
+    }
+
+    var slide = document.getElementById("image-slide");
+    var myimg = slide.getElementsByTagName('img');
+
+    function image(index) {
+        for (let i = 0; i < myimg.length; i++) {
+            const element = myimg[i];
+            myimg[i].style.display = "none";
+        }
+        if (index == undefined) {
+            myimg[0].style.display = "block";
+        } else {
+            myimg[index].style.display = "block";
+        }
+    }
+    image();
+    var productBox = document.getElementsByClassName("prod-boxes");
+    productBox[0].style.display = "none";
+    var indexValue = 0;
+    function left() {
+        for (let index = 0; index < productBox.length; index++) {
+            productBox[index].style.display = "block";
+        }
+        indexValue++;
+        if (indexValue > productBox.length) { indexValue = 1 }
+        productBox[indexValue - 1].style.display = "none";
+    }
+    var rightIndex = productBox.length - 1;
+    function right() {
+        for (let index = 0; index < productBox.length; index++) {
+            productBox[index].style.display = "block";
+        }
+        rightIndex++;
+        if (rightIndex > productBox.length) { rightIndex = 1 }
+        productBox[rightIndex - 1].style.display = "none";
+    }
+
+    // var productSmall = document.getElementsByClassName("prod-boxes")
+    // productSmall[0].style.display = "block";
+    // function leftSmall() {
+    //     for (let index = 0; index < productSmall.length; index++) {
+    //         productSmall[index].style.display = "none";
+    //     }
+    //     indexValue++;
+    //     if (indexValue > productSmall.length) { indexValue = 1 }
+    //     productSmall[indexValue - 1].style.display = "block";
+    // }
+    // var rightIndex = productSmall.length - 1;
+    // function rightSmall() {
+    //     for (let index = 0; index < productSmall.length; index++) {
+    //         productSmall[index].style.display = "none";
+    //     }
+    //     rightIndex++;
+    //     if (rightIndex > productSmall.length) { rightIndex = 1 }
+    //     productSmall[rightIndex - 1].style.display = "block";
+    // }
 </script>
 
 </html>
