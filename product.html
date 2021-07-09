@@ -612,25 +612,25 @@
         productBox[rightIndex - 1].style.display = "none";
     }
 
-    // var productSmall = document.getElementsByClassName("prod-boxes")
-    // productSmall[0].style.display = "block";
-    // function leftSmall() {
-    //     for (let index = 0; index < productSmall.length; index++) {
-    //         productSmall[index].style.display = "none";
-    //     }
-    //     indexValue++;
-    //     if (indexValue > productSmall.length) { indexValue = 1 }
-    //     productSmall[indexValue - 1].style.display = "block";
-    // }
-    // var rightIndex = productSmall.length - 1;
-    // function rightSmall() {
-    //     for (let index = 0; index < productSmall.length; index++) {
-    //         productSmall[index].style.display = "none";
-    //     }
-    //     rightIndex++;
-    //     if (rightIndex > productSmall.length) { rightIndex = 1 }
-    //     productSmall[rightIndex - 1].style.display = "block";
-    // }
+    var productSmall = document.getElementsByClassName("prod-boxes")
+    productSmall[0].classList.add("visible")
+    function leftSmall() {
+        for (let index = 0; index < productSmall.length; index++) {
+            productSmall[index].classList.remove("visible");
+        }
+        indexValue++;
+        if (indexValue > productSmall.length) { indexValue = 1 }
+        productSmall[indexValue - 1].classList.add("visible");
+    }
+    var rightIndex = productSmall.length - 1;
+    function rightSmall() {
+        for (let index = 0; index < productSmall.length; index++) {
+            productSmall[index].classList.remove("visible");
+        }
+        rightIndex++;
+        if (rightIndex > productSmall.length) { rightIndex = 1 }
+        productSmall[rightIndex - 1].classList.add("visible");
+    }
 </script>
 
 </html>

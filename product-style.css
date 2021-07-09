@@ -409,6 +409,7 @@ hr{
 .prod-des ul li{
     padding: 10px 0px;
     font-size: 13px;
+    z-index: -1;
 }
 .prod-des ul li span:hover{
     text-decoration: underline;
@@ -833,7 +834,6 @@ h4{
     font-weight: 300;
     font-size: 13px;
 }
-
 @media (min-width: 320px) and (max-width:380px){
 
     .sample{
@@ -1094,6 +1094,13 @@ h4{
             flex-direction: column;
             position: relative;
             height: 560px;
+        }
+        .prod-boxes{
+            visibility: hidden;
+            display: block !important;
+        }
+        .visible{
+            visibility: visible;
         }
         .left,.right{
             display: none !important;
@@ -1433,9 +1440,9 @@ h4{
         }
         .prod-boxes{
             width: 45%;
-        position: static;     
+            position: static;     
         }
-        .footer{
+       .footer{
             padding: 30px 30px;
         }
         .footer-logo{
